@@ -142,6 +142,6 @@ AUTH_USER_MODEL = "books.User"
 #django-registration-redux
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
-# LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 
 
