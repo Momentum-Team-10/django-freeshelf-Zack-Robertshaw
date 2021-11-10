@@ -29,3 +29,4 @@ urlpatterns = [
 
 
 ]
+# path('', include('django.contrib.auth.urls'), name='login'),

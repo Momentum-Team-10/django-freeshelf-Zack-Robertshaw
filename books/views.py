@@ -11,7 +11,7 @@ def homepage(request):
     return render(request, "books/homepage.html")
 
 def list_books(request):
-    book = Books.objects.all().order_by("title")
+    book = Books.objects.all().order_by("created_at")
     return render(request, "books/list_books.html",
                   {"book": book})
 

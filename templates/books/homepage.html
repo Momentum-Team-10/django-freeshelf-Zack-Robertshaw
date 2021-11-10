@@ -2,6 +2,18 @@
 {% load static %}
 
 {% block content %}
-<h1>Homepage</h1>
-<p> Please <a href="{% url 'auth_login' %}" class="b dark-pink">Login</a></p>
+<h1>Login to See the Library</h1>
+<!-- <nav>
+    <div>
+        {% if user.is_authenticated %}
+        <p class="white">Hello, {{ user.username }}!</p>
+        <a href="{% url 'auth_logout' %}?next={% url 'auth_login' %}" class="white ml3">Logout</a>
+        {% else %}
+        <a href="{% url 'auth_login' %}" class="white">Login</a>
+        {% endif %}
+    </div>
+</nav> -->
+
 {% endblock content %}
+
+<!-- <p> Please <a href="{% url 'auth_login' %}" class="b dark-pink">Login</a></p> -->
