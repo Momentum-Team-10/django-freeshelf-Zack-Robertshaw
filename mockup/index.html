@@ -33,33 +33,26 @@
   <main>
     <section id="books">
       <h2>Recently added books</h2>
+      {% for book in book %}
       <div class="mv3">
-        <div class="normal f3"><a href="http://greenteapress.com/thinkpython2/html/index.html">Think Python: How to
-            Think
-            Like a Computer
-            Scientist</a> <span class="f4">by Allen Downey</span></div>
+        <div class="normal f3"><a href="http://greenteapress.com/thinkpython2/html/index.html">{{ book.title }}</a> <span class="f4">by Allen Downey</span></div>
         <p class="lh-copy">
-          <i>Think Python</i> is an introduction to Python programming for beginners. It starts with basic concepts of
-          programming, and is
-          carefully designed to define all terms when they are first used and to develop each new concept in a logical
-          progression.
-          Larger pieces, like recursion and object-oriented programming are divided into a sequence of smaller steps
-          and introduced
-          over the course of several chapters.
+          <i>Think Python</i>{{ book.description }}
         </p>
         <div class="flex">
           <div class="mr2 pr2 bw1 br green">
             Favorited 4 times
           </div>
           <div class="mr2 pr2 bw1 br">
-            added 2018-11-07
+            {{ book.created_at }}
           </div>
           <div>
             Category: <a href="#">Python</a>
           </div>
         </div>
       </div>
-      <div class="mv3">
+      {% endfor %}
+      <!-- <div class="mv3">
         <div class="normal f3">
           <a href="https://automatetheboringstuff.com/">Automate the Boring Stuff</a> <span class="f4">by Al Sweigart</span></div>
         <p class="lh-copy">
@@ -104,7 +97,7 @@
         <div class="w-25 ml5">
           <img src="cover.png">
         </div>
-      </div>
+      </div> -->
     </section>
   </main>
 </body>

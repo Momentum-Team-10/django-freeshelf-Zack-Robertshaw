@@ -7,24 +7,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
+
     <title>Django Freeshelf</title>
 </head>
 
-<body>
-    <header>
-        <h1><i></i>Django Freeshelf base html</h1>
-    </header>
-    <nav>
-        <div>
-            {% if user.is_authenticated %}
-            <p class="white">Hello, {{ user.username }}!</p>
-            <a href="{% url 'auth_logout' %}?next={% url 'auth_login' %}" class="white ml3">Logout</a>
-            {% else %}
-            <a href="{% url 'auth_login' %}" class="white">Login</a>
-            {% endif %}
+<body class="sans-serif pv2 ph4">
+    <header class="flex items-center justify-between bg-green white ph3">
+        <div id="title">
+            <h1 class="white">Freeshelf</h1>
         </div>
-    </nav>
+        <div id="account-menu">
+            {% if user.is_authenticated %}
+            <p>Hello, {{ user.username }}!</p>
+            <a href="{% url 'auth_logout' %}?next={% url 'auth_login' %}">Logout</a>
+            {% else %}
+            <a href="{% url 'auth_login' %}">Login</a>
+            {% endif %}
 
+            <!-- <a class="washed-blue" href="#">{% url 'auth_login' %}</a> | <a class="washed-blue" href="#">Register</a> -->
+        </div>
+    </header>
+
+    <!-- <header class="fl w-100 bg-blue b--white-10">
+        <h1><i></i>Django Freeshelf base html</h1>
+        <nav>
+            <div>
+                {% if user.is_authenticated %}
+                <p>Hello, {{ user.username }}!</p>
+                <a href="{% url 'auth_logout' %}?next={% url 'auth_login' %}">Logout</a>
+                {% else %}
+                <a href="{% url 'auth_login' %}">Login</a>
+                {% endif %}
+            </div>
+        </nav>
+    </header> -->
 
     {% block content %}
 
