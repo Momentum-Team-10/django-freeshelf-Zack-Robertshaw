@@ -14,9 +14,9 @@ def homepage(request):
 
 @login_required
 def list_books(request):
-    book = Books.objects.all().order_by("created_at")
+    books = Books.objects.all().order_by("created_at")
     return render(request, "books/list_books.html",
-                  {"book": book})
+                  {"books": books})
 
 def add_book(request):
     if request.method == 'GET':
