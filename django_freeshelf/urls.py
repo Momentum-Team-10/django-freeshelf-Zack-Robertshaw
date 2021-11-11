@@ -26,7 +26,6 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     # path('', books_views.list_books, name='list_books'),
     path('books/add_book/', books_views.add_book, name='add_book'),
-
-
+    path('categories/<slug:slug>/', books_views.category_filter, name='category_filter'),
 ]
 # path('', include('django.contrib.auth.urls'), name='login'),

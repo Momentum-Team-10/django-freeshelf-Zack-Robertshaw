@@ -16,21 +16,25 @@
       Books by category:
     </div>
     <ul class="list ml1 pa0 flex flex-wrap">
-      <li class="mr2 pr2 bw1 br"><a href="#">French</a></li>
+      {% for category in categories %}
+      <li class="mr2 pr2 bw1 br"><a href={{category.name}}>{{ category.name }}</a></li>
+      {% endfor %}
+    
+      <!-- <li class="mr2 pr2 bw1 br"><a href="#">International</a></li>
       <li class="mr2 pr2 bw1 br"><a href="#">American</a></li>
       <li class="mr2 pr2 bw1 br"><a href="#">Contemporary</a></li>
-      <li class="mr2 pr2 bw1 br"><a href="#">Classics</a></li>
-      <li class=""><a href="#">R</a></li>
+      <li class="mr2 pr2 bw1 br"><a href="#">Classics</a></li> -->
     </ul>
   </nav>
+  
   <main>
     <section id="books">
       <h2>Recently added books</h2>
       {% for book in book %}
-      <div class="mv3">
+      <div class="ba bw2 mv3">
         <div class="normal f3"><a href={{book.url}}>{{ book.title }}</a> <span class="f4">by {{ book.author}}</span></div>
         <p class="lh-copy">
-          <i>Think Python</i>{{ book.description }}
+          <i></i>{{ book.description }}
         </p>
         <div class="flex">
           <div class="mr2 pr2 bw1 br green">
@@ -127,3 +131,8 @@
   <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
 
 </p> -->
+<ul class="list ml1 pa0 flex flex-wrap">
+  {% for category in categories %}
+  <li class="mr2 pr2 bw1 br"><a href="{% url 'category_search' slug=category.slug %}">{{ category.name }}</a></li>
+  {% endfor %}
+</ul>
