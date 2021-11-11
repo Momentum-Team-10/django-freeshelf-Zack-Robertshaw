@@ -29,3 +29,4 @@ urlpatterns = [
     path('categories/<slug:slug>/', books_views.category_filter, name='category_filter'),
 ]
 # path('', include('django.contrib.auth.urls'), name='login'),
+    # path("genres/<slug:slug>", album_views.show_genre, name="show_genre"),

@@ -29,7 +29,9 @@ def add_book(request):
 
     return render(request, "books/add_book.html", {"form": form})  
     
-def category_filter(request, categories):
-    books=Category.objects.filter(categories_name=categories)
-    return render(request, 'books/book_categories.html', {"books":books, "categories": categories})
+def category_filter(request, slug):
+    category =get_object_or_404(Category, slug=slug)
+    books = category.books.all()
+    return render(request, 'books/book_categories.html', {"category": category, "books": books})
+
 

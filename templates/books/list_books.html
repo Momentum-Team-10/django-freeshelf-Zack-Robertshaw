@@ -16,10 +16,13 @@
       Books by category:
     </div>
     <ul class="list ml1 pa0 flex flex-wrap">
-      {% for category in categories %}
-      <li class="mr2 pr2 bw1 br"><a href={{category.name}}>{{ category.name }}</a></li>
+
+      {% for book in book %}
+      <li class="mr2 pr2 bw1 br"><a href="#">{{ book.category }}</a></li>
       {% endfor %}
-    
+
+      
+      
       <!-- <li class="mr2 pr2 bw1 br"><a href="#">International</a></li>
       <li class="mr2 pr2 bw1 br"><a href="#">American</a></li>
       <li class="mr2 pr2 bw1 br"><a href="#">Contemporary</a></li>
@@ -44,7 +47,7 @@
             {{ book.created_at }}
           </div>
           <div>
-            Category: <a href="#">Python</a>
+            Category: <a href="#"></a>
           </div>
         </div>
       </div>
