@@ -1,0 +1,11 @@
+def homepage(request):
+    # show a homepage
+    if request.user.is_authenticated:
+        return redirect("books/list_books.html")
+    return render(request, "books/homepage.html")
+
+
+path("", books_views.homepage, name="home"),
+
+
+path('books/', books_views.list_books, name='list_books'),
